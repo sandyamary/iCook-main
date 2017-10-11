@@ -50,22 +50,7 @@ class HomeViewController: UICollectionViewController {
         let menuItem = UIImage(named: "Menu")?.withRenderingMode(.alwaysOriginal)
         let menuBarItem = UIBarButtonItem(image: menuItem, style: .plain, target: self, action: #selector(slideMenu))
         navigationItem.leftBarButtonItem = menuBarItem
-        
-        let logOutItem = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOut))
-        logOutItem.tintColor = .black
-        navigationItem.rightBarButtonItem = logOutItem
-        
     }
-    
-    
-    func logOut() -> Void {
-        icookAddFBID(FBID:"")
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count

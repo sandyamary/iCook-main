@@ -1,4 +1,4 @@
- //
+//
 //  YoutubeClient.swift
 //  iCook
 //
@@ -47,7 +47,7 @@ class YoutubeClient {
             
             /* GUARD: Was there an error? */
             guard (error == nil) else {
-                sendError((error?.localizedDescription)!)
+                sendError("There was an error with your request: \(String(describing: error))")
                 return
             }
             

@@ -26,35 +26,10 @@ class VideosDataBaseKeys {
 }
 
 class Constants {
-    static let applicationName = "iCook"
+    static let mainURL = "https://familien-info.at/"
+    static let applicationName = "FamilienApp"
 }
 
-func icookFBID() -> String
-{
-    if UserDefaults.standard.object(forKey: "FBID") != nil
-    {
-        let kDeviceToken = UserDefaults.standard.object(forKey: "FBID") as! String
-        return kDeviceToken
-    }
-    else
-    {
-        return ""
-    }
-}
-
-func icookAddFBID(FBID:String)
-{
-    if FBID != ""
-    {
-        UserDefaults.standard.set(FBID, forKey: "FBID")
-        UserDefaults.standard.synchronize()
-    }
-    else
-    {
-        UserDefaults.standard.removeObject(forKey: "FBID")
-        UserDefaults.standard.synchronize()
-    }
-}
 
 func icookPageToken(key:String) -> String
 {

@@ -17,11 +17,8 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "iCook"
-        self.navigationItem.setHidesBackButton(true, animated: false)
     }
 
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -54,8 +51,6 @@ class LogInViewController: UIViewController {
                     }
                     self.socialId = self.dict["id"] as! String
                     self.socialImgUrlStr = ((self.dict["picture"] as! NSDictionary).object(forKey: "data") as! NSDictionary).object(forKey: "url") as! String
-                    
-                    icookAddFBID(FBID:self.socialId)
                     
                     let vc = HomeViewController(collectionViewLayout: UICollectionViewFlowLayout())
                     self.navigationController?.pushViewController(vc, animated: true)
