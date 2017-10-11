@@ -32,6 +32,7 @@
 		8ABDCFD51EFC4BB80008A2E5 /* iCookUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABDCFD41EFC4BB80008A2E5 /* iCookUITests.swift */; };
 		B17CD05073BBF4CB3AA0DB62 /* Pods_iCookTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 822DDAA209DA6EA9FA688EAA /* Pods_iCookTests.framework */; };
 		C5F1033D5AB914CF37171F38 /* Pods_iCookUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 018B9776714534685478F8D5 /* Pods_iCookUITests.framework */; };
+		F0F5611D1F8E499F006191D5 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F5611C1F8E499F006191D5 /* Reachability.swift */; };
 		F184E95D1F6FF256002B4B0C /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F184E95B1F6FF256002B4B0C /* Model.xcdatamodeld */; };
 		F184E95F1F6FF2E4002B4B0C /* CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F184E95E1F6FF2E4002B4B0C /* CoreDataClass.swift */; };
 		F184E9611F6FF2F2002B4B0C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F184E9601F6FF2F2002B4B0C /* Constants.swift */; };
@@ -94,6 +95,7 @@
 		8ABDCFD61EFC4BB80008A2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9C71B3803AA6F5052D866CA9 /* Pods-iCookTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCookTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iCookTests/Pods-iCookTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0ECE3A5A7C1C4E8941C71D8 /* Pods-iCookUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iCookUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iCookUITests/Pods-iCookUITests.release.xcconfig"; sourceTree = "<group>"; };
+		F0F5611C1F8E499F006191D5 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		F184E95C1F6FF256002B4B0C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		F184E95E1F6FF2E4002B4B0C /* CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataClass.swift; sourceTree = "<group>"; };
 		F184E9601F6FF2F2002B4B0C /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				8A61AC9D1F15A035001CF6B6 /* Extensions.swift */,
 				F184E95E1F6FF2E4002B4B0C /* CoreDataClass.swift */,
 				F184E9601F6FF2F2002B4B0C /* Constants.swift */,
+				F0F5611C1F8E499F006191D5 /* Reachability.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -342,7 +345,7 @@
 				TargetAttributes = {
 					8ABDCFB01EFC4BB80008A2E5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = AF59P86GL6;
+						DevelopmentTeam = 4D6637WAPY;
 						ProvisioningStyle = Automatic;
 					};
 					8ABDCFC41EFC4BB80008A2E5 = {
@@ -586,6 +589,7 @@
 				F1D689D21F70F84600148773 /* SearchViewController.swift in Sources */,
 				F184E9611F6FF2F2002B4B0C /* Constants.swift in Sources */,
 				F184E95F1F6FF2E4002B4B0C /* CoreDataClass.swift in Sources */,
+				F0F5611D1F8E499F006191D5 /* Reachability.swift in Sources */,
 				8A61AC971F14971D001CF6B6 /* ListViewController.swift in Sources */,
 				8A61AC9E1F15A035001CF6B6 /* Extensions.swift in Sources */,
 				8A61ACAB1F1ADF4D001CF6B6 /* OptionsLauncher.swift in Sources */,
@@ -745,7 +749,7 @@
 			baseConfigurationReference = 8983AB32E98FD8ED7FC3167F /* Pods-iCook.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AF59P86GL6;
+				DEVELOPMENT_TEAM = 4D6637WAPY;
 				INFOPLIST_FILE = iCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -760,7 +764,7 @@
 			baseConfigurationReference = 4961879DACF6F1DA49C6F89E /* Pods-iCook.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = AF59P86GL6;
+				DEVELOPMENT_TEAM = 4D6637WAPY;
 				INFOPLIST_FILE = iCook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

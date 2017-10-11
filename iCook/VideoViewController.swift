@@ -29,6 +29,31 @@ class VideoViewController: UIViewController {
     var menuBarItem = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
+        CoreDataClass.svprogressHudShow(title: "Loading...", view: self)
+        
+        let reachability = Reachability()!
+        
+        reachability.whenReachable = { reachability in
+            if reachability.connection == .wifi {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        }
+        reachability.whenUnreachable = { _ in
+            print("Not reachable")
+            reachability.stopNotifier()
+            CoreDataClass.svprogressHudDismiss(view: self)
+            CoreDataClass.alert(Constants.applicationName, message: "No Internet Connection", view: self)
+        }
+        
+        
+        do {
+            try reachability.startNotifier()
+        } catch {
+            print("Unable to start notifier")
+        }
+        
         videoView.isUserInteractionEnabled = true
         navigationController?.navigationBar.tintColor = UIColor.white
         navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "Arial", size: 19.0)!, NSForegroundColorAttributeName : UIColor.white]
@@ -43,7 +68,7 @@ class VideoViewController: UIViewController {
         titleLBL.text = videos[index].title
         channelNameLBL.text = videos[index].channelTitle
         volumeSlider.value = 1;
-        CoreDataClass.svprogressHudShow(title: "Loading...", view: self)
+        
         setUpNavBarItem()
         if  !videos[index].fav {
             navigationItem.rightBarButtonItem = nil

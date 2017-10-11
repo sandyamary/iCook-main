@@ -19,13 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         
+        if icookFBID().characters.count == 0 {
+            let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+            let TVC = storyBoard.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
+            let navigation = UINavigationController.init(rootViewController: TVC)
+            navigation.setNavigationBarHidden(false, animated: true)
+            self.window?.rootViewController=navigation
+            self.window?.makeKeyAndVisible()
+        } else {
+            
+            let vc = HomeViewController(collectionViewLayout: UICollectionViewFlowLayout())
+            let navigation = UINavigationController.init(rootViewController: vc)
+            navigation.setNavigationBarHidden(false, animated: true)
+            self.window?.rootViewController=navigation
+            self.window?.makeKeyAndVisible()
+        }
         
-        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        let TVC = storyBoard.instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
-        let navigation = UINavigationController.init(rootViewController: TVC)
-        navigation.setNavigationBarHidden(false, animated: true)
-        self.window?.rootViewController=navigation
-        self.window?.makeKeyAndVisible()
     
         UINavigationBar.appearance().barTintColor = UIColor.purple
         application.statusBarStyle = .lightContent

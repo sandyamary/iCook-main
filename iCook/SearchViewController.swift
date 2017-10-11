@@ -49,6 +49,9 @@ class SearchViewController: UIViewController {
             SVProgressHUD.dismiss()
             if error != nil {
                 print("found an error")
+                DispatchQueue.main.async {
+                    CoreDataClass.alert(Constants.applicationName, message: (error?.localizedDescription)!, view: self)
+                }
             } else {
                 self.videos = [Video]()
                 DispatchQueue.main.async {

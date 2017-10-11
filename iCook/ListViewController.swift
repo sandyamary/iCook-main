@@ -43,6 +43,8 @@ class ListViewController: UICollectionViewController {
             
         }) { (error) in
             print(error.localizedDescription)
+            
+            
         }
     }
     
@@ -63,6 +65,10 @@ class ListViewController: UICollectionViewController {
             self.isLoading = false
             if error != nil {
                 print("found an error")
+                DispatchQueue.main.async {
+                    CoreDataClass.alert(Constants.applicationName, message: (error?.localizedDescription)!, view: self)
+                }
+                
             } else {
                 var check = Bool()
                 icookAddPageToken(token: pageToken, key: self.navigationItem.title!)
